@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>来到首页</h3>
+<h3>选择上传文件</h3>
+<form method="post" enctype="multipart/form-data" action="upload_error.html">
+    {% csrf_token %}
+
+    <input type="file" name="img"  multiple>
+    <input type="submit" name="submit" id="submit" value="upload" />
+
+    <input type="submit" value="上传" >
+</form>
+
+</body>
+</html>

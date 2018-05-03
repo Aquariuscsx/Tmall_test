@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        let register_url = 'http://127.0.0.1:8000/day02/register';
+
+
+        $(function () {
+            $('#register_btn').click(function () {
+                let formdata = new FormData('#register');
+                formdata.append('username', $('input:text').val());
+                formdata.append('password', $('input:password').val());
+                formdata.append('head',$('input:file').file());
+                $.ajax(register_url,{
+                    type:'post',
+                    data:formdata,
+                    success: function () {
+                        alert('上传成功')
+                    }
+
+                });
+               return false
+            });
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
